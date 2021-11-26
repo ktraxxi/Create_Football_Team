@@ -30,6 +30,10 @@ namespace ITParkApp
         {
             tb_name.Text = "";
         }
+        private void tb_teamname_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tb_teamname.Text = "";
+        }
         private void tb_surname_GotFocus(object sender, RoutedEventArgs e)
         {
             tb_surname.Text = "";
@@ -47,7 +51,7 @@ namespace ITParkApp
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Player.ListBoxUpdate(listbox_players);
-            //Team.TeamListBoxUpdate(listbox_teams);
+            Team.TeamListBoxUpdate(listbox_teams);
         }
         private void btn_reg_Click(object sender, RoutedEventArgs e)
         {
@@ -72,12 +76,24 @@ namespace ITParkApp
             Player player2 = (Player)listbox_players.SelectedItem;
             Player player3 = (Player)listbox_players.SelectedItem;
             List<Player> playersList = new List<Player>();
+
             playersList.Add(player1);
             playersList.Add(player2);
             playersList.Add(player3);
             Team team = new(tb_teamname.Text, playersList);
             Team.AddTeam(team);
-            //Team.TeamListBoxUpdate(listbox_teams);
+            Team.TeamListBoxUpdate(listbox_teams);
+        }
+
+        private void listbox_teams_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("Players_Football_Teams");
+            var collection = database.GetCollection<Team>("Teams");
+
+            Team team = (Team)listbox_teams.SelectedItem;
+            lbl.Content = team.teamName;
         }
     }
 }

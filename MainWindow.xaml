@@ -16,14 +16,14 @@
         <TextBox x:Name="tb_surname" HorizontalAlignment="Left" Margin="610,81,0,0" Text="Second Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" GotFocus="tb_surname_GotFocus"/>
         <TextBox x:Name="tb_number" HorizontalAlignment="Left" Margin="610,104,0,0" Text="Number" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" GotFocus="tb_number_GotFocus"/>
         <Button x:Name="btn_reg" Content="Registrate" HorizontalAlignment="Left" Margin="610,150,0,0" VerticalAlignment="Top" Width="120" Click="btn_reg_Click" Height="20"/>
-        <ListBox x:Name="listbox_players" Margin="21,44,610,43" SelectionChanged="lb_players_SelectionChanged" SelectionMode="Multiple"/>
-        <ListBox x:Name="listbox_teams" Margin="172,44,460,43"/>
+        <ListBox x:Name="listbox_players" Margin="21,44,610,43" SelectionChanged="lb_players_SelectionChanged" SelectionMode="Extended"/>
+        <ListBox x:Name="listbox_teams" Margin="172,44,460,43" SelectionChanged="listbox_teams_SelectionChanged"/>
         <Border BorderThickness="1" BorderBrush="Black" Margin="336,44,222,43">
             <Label x:Name="lbl" Content=""/>
         </Border>
         <Button x:Name="btn_newteam" Content="Create New Team" HorizontalAlignment="Left" Margin="610,267,0,0" VerticalAlignment="Top" RenderTransformOrigin="6.33,-6.352" Width="120" Height="20" Click="btn_newteam_Click"/>
         <Button x:Name="btn_rndteam" Content="Create Random Team" HorizontalAlignment="Left" Margin="610,302,0,0" VerticalAlignment="Top" Width="120" Height="20"/>
-        <TextBox x:Name="tb_teamname" HorizontalAlignment="Left" Margin="610,233,0,0" Text="Team Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_teamname" HorizontalAlignment="Left" Margin="610,233,0,0" Text="Team Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" GotFocus="tb_teamname_GotFocus"/>
         <TextBox x:Name="tb_team" HorizontalAlignment="Left" Margin="610,127,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" GotFocus="tb_team_GotFocus"/>
 
     </Grid>
