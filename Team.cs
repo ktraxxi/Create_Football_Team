@@ -12,7 +12,6 @@ namespace ITParkApp
 {
     class Team
     {
-
         [BsonId]
         [BsonIgnoreIfDefault]
         public ObjectId _id { get; set; }
@@ -24,31 +23,27 @@ namespace ITParkApp
             this.teamName = teamName;
             this.sqwad = sqwad;
         }
-       
-        public static void AddTeam(Team team, string teamName)
+        public static void AddTeam(Team team)
         {
             var connectionString = "mongodb://localhost";
             var client = new MongoClient(connectionString);
-            var database = client.GetDatabase("MyTeams");
-            var collection = database.GetCollection<Team>(teamName);
+            var database = client.GetDatabase("Players_Football_Teams");
+            var collection = database.GetCollection<Team>("Teams");
             collection.InsertOne(team);
         }
-        public static void ListBoxTeamUpdate(ListBox listBox)
+        public static void TeamListBoxUpdate(ListBox listBox)
         {
             listBox.Items.Clear();
             var connectionString = "mongodb://localhost";
             var client = new MongoClient(connectionString);
-            var database = client.GetDatabase("MyTeams");
-            var collection = database.GetCollection<Team>("Rubin");
+            var database = client.GetDatabase("Players_Football_Teams");
+            var collection = database.GetCollection<Team>("Teams");
+
             var listTeams = collection.Find(x => true).ToList();
             foreach (var item in listTeams)
             {
                 listBox.Items.Add(item.teamName);
             }
-        }
-        public static void AddPlayerIntoTeam()
-        {
-
         }
     }
 }

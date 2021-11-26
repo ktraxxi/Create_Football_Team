@@ -18,18 +18,20 @@ namespace ITParkApp
         public string name;
         public string surname;
         public int number;
+        public string currentTeam;
 
-        public Player(string name, string surname, int number)
+        public Player(string name, string surname, int number, string currentTeam)
         {
             this.name = name;
             this.surname = surname;
             this.number = number;
+            this.currentTeam = currentTeam;
         }
         public static void AddPlayer(Player player)
         {
             var connectionString = "mongodb://localhost";
             var client = new MongoClient(connectionString);
-            var database = client.GetDatabase("ITParkTeams");
+            var database = client.GetDatabase("Players_Football_Teams");
             var collection = database.GetCollection<Player>("Players");
             collection.InsertOne(player);
         }
@@ -38,14 +40,14 @@ namespace ITParkApp
             listBox.Items.Clear();
             var connectionString = "mongodb://localhost";
             var client = new MongoClient(connectionString);
-            var database = client.GetDatabase("ITParkTeams");
+            var database = client.GetDatabase("Players_Football_Teams");
             var collection = database.GetCollection<Player>("Players");
-            var listUsers = collection.Find(x => true).ToList();
-            foreach (var item in listUsers)
-            {
-                listBox.Items.Add(item.name);
-            }
 
+            var listPlayers = collection.Find(x => true).ToList();
+            foreach (var item in listPlayers)
+            {
+                listBox.Items.Add(item);
+            }
         }
     }
 }

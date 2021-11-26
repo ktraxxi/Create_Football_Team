@@ -12,19 +12,19 @@
             <ColumnDefinition Width="11*"/>
         </Grid.ColumnDefinitions>
         <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="346" Margin="579,0,0,0" VerticalAlignment="Center" Width="183"/>
-        <TextBox x:Name="tb_name" HorizontalAlignment="Left" Margin="610,73,0,0" Text="First name" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18"/>
-        <TextBox x:Name="tb_surname" HorizontalAlignment="Left" Margin="610,105,0,0" Text="Second Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18"/>
-        <TextBox x:Name="tb_number" HorizontalAlignment="Left" Margin="610,137,0,0" Text="Number" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18"/>
-        <Button x:Name="btn_reg" Content="Registrate" HorizontalAlignment="Left" Margin="610,169,0,0" VerticalAlignment="Top" Width="120" Click="btn_reg_Click" Height="20"/>
-        <ListBox x:Name="lb_players" Margin="21,44,610,43" SelectionChanged="lb_players_SelectionChanged" SelectionMode="Multiple"/>
-        <ListBox x:Name="lb_teams" Margin="172,44,460,43" SelectionChanged="lb_teams_SelectionChanged"/>
+        <TextBox x:Name="tb_name" HorizontalAlignment="Left" Margin="610,58,0,0" Text="First name" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" GotFocus="tb_name_GotFocus"/>
+        <TextBox x:Name="tb_surname" HorizontalAlignment="Left" Margin="610,81,0,0" Text="Second Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" GotFocus="tb_surname_GotFocus"/>
+        <TextBox x:Name="tb_number" HorizontalAlignment="Left" Margin="610,104,0,0" Text="Number" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" GotFocus="tb_number_GotFocus"/>
+        <Button x:Name="btn_reg" Content="Registrate" HorizontalAlignment="Left" Margin="610,150,0,0" VerticalAlignment="Top" Width="120" Click="btn_reg_Click" Height="20"/>
+        <ListBox x:Name="listbox_players" Margin="21,44,610,43" SelectionChanged="lb_players_SelectionChanged" SelectionMode="Multiple"/>
+        <ListBox x:Name="listbox_teams" Margin="172,44,460,43"/>
         <Border BorderThickness="1" BorderBrush="Black" Margin="336,44,222,43">
             <Label x:Name="lbl" Content=""/>
         </Border>
         <Button x:Name="btn_newteam" Content="Create New Team" HorizontalAlignment="Left" Margin="610,267,0,0" VerticalAlignment="Top" RenderTransformOrigin="6.33,-6.352" Width="120" Height="20" Click="btn_newteam_Click"/>
         <Button x:Name="btn_rndteam" Content="Create Random Team" HorizontalAlignment="Left" Margin="610,302,0,0" VerticalAlignment="Top" Width="120" Height="20"/>
         <TextBox x:Name="tb_teamname" HorizontalAlignment="Left" Margin="610,233,0,0" Text="Team Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Add into Team" HorizontalAlignment="Left" Margin="610,354,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.901,-1.762" Width="120"/>
+        <TextBox x:Name="tb_team" HorizontalAlignment="Left" Margin="610,127,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" GotFocus="tb_team_GotFocus"/>
 
     </Grid>
 </Window>
